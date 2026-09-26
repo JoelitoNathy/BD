@@ -21,3 +21,29 @@ CREATE TABLE CURSO (
     horas_semanales INT NOT NULL
 );
 GO
+
+ALTER TABLE ESTUDIANTE ADD 
+    correo VARCHAR(120),
+    creado_el DATETIME2 DEFAULT SYSDATETIME(),
+    modificado_el DATETIME2 NULL,
+    borrado_el DATETIME2 NULL,
+    estado BIT DEFAULT 1;
+
+ALTER TABLE DOCENTE ADD 
+    especialidad VARCHAR(100),
+    creado_el DATETIME2 DEFAULT SYSDATETIME(),
+    modificado_el DATETIME2 NULL,
+    borrado_el DATETIME2 NULL,
+    estado BIT DEFAULT 1;
+
+ALTER TABLE CURSO ADD 
+    creditos INT,
+    creado_el DATETIME2 DEFAULT SYSDATETIME(),
+    modificado_el DATETIME2 NULL,
+    borrado_el DATETIME2 NULL,
+    estado BIT DEFAULT 1;
+GO
+
+
+
+
