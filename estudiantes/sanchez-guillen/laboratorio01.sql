@@ -29,5 +29,34 @@ CREATE TABLE CURSO (
     horas_semanales INT
 );
 
+-- Usando el Alter table para estudiante
+ALTER TABLE ESTUDIANTE
+ADD correo VARCHAR(120),
+    creado_el DATETIME2 DEFAULT SYSDATETIME(),
+    modificado_el DATETIME2 NULL,
+    borrado_el DATETIME2 NULL,
+    estado BIT DEFAULT 1;
 
+
+    --Usando alter en docente 
+ALTER TABLE DOCENTE
+ADD especialidad VARCHAR(100),
+    creado_el DATETIME2 DEFAULT SYSDATETIME(),
+    modificado_el DATETIME2 NULL,
+    borrado_el DATETIME2 NULL,
+    estado BIT DEFAULT 1;
+
+
+    --usando alter en curso 
+ALTER TABLE CURSO
+ADD creditos INT,
+    creado_el DATETIME2 DEFAULT SYSDATETIME(),
+    modificado_el DATETIME2 NULL,
+    borrado_el DATETIME2 NULL,
+    estado BIT DEFAULT 1;
+
+
+EXEC sp_help 'ESTUDIANTE';
+EXEC sp_help 'DOCENTE';
+EXEC sp_help 'CURSO';
 
