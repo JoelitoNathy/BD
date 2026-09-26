@@ -14,23 +14,23 @@ alumno/vallejos-jhan
 
 ## Lista de verificación
 
-- [ ] Crear base de datos
-- [ ] Crear tabla ESTUDIANTE
-- [ ] Crear tabla DOCENTE
-- [ ] Crear tabla CURSO
-- [ ] Implementar IDENTITY(1,1)
-- [ ] Agregar campos con ALTER TABLE
-- [ ] Agregar creado_el
-- [ ] Agregar modificado_el
-- [ ] Agregar borrado_el
-- [ ] Agregar estado
-- [ ] Ejecutar INSERT
-- [ ] Ejecutar UPDATE
-- [ ] Ejecutar borrado lógico
-- [ ] Ejecutar DELETE
-- [ ] Realizar SELECT de verificación
-- [ ] Subir evidencias
-- [ ] Subir presentación final
+- [x] Crear base de datos
+- [x] Crear tabla ESTUDIANTE
+- [x] Crear tabla DOCENTE
+- [x] Crear tabla CURSO
+- [x] Implementar IDENTITY(1,1)
+- [x] Agregar campos con ALTER TABLE
+- [x] Agregar creado_el
+- [x] Agregar modificado_el
+- [x] Agregar borrado_el
+- [x] Agregar estado
+- [x] Ejecutar INSERT
+- [x] Ejecutar UPDATE
+- [x] Ejecutar borrado lógico
+- [x] Ejecutar DELETE
+- [x] Realizar SELECT de verificación
+- [x] Subir evidencias
+- [x] Subir presentación final
 
 ## ¿Qué hace IDENTITY(1,1)?
 
@@ -56,6 +56,6 @@ Indica la disponibilidad del registro ((1) = activo, (0) = inactivo).
 Mantener el orden correcto en la ejecución de los bloques SQL (crear, alterar e insertar) y respetar la estructura de carpetas y commits en Git.
 ## Conclusiones
 
-1.`IDENTITY(1,1)` automatiza y asegura la unicidad en las claves primarias sin intervención manual.
+1.IDENTITY(1,1) automatiza y asegura la unicidad en las claves primarias sin intervención manual.
 2.Los campos de auditoría garantizan la trazabilidad y preservan el historial de los datos ante bajas.
 3.El control de versiones mediante ramas en Git asegura un trabajo ordenado y documentado.
