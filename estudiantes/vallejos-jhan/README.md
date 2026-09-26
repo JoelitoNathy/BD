@@ -34,23 +34,23 @@ alumno/vallejos-jhan
 
 ## ¿Qué hace IDENTITY(1,1)?
 
-Genera valores automáticos y secuenciales (comienza en 1 y aumenta de 1 en 1) para las claves primarias, evitando que deban ingresarse manualmente en los `INSERT`.
+Genera valores automáticos y secuenciales (comienza en 1 y aumenta de 1 en 1) para las claves primarias, evitando que deban ingresarse manualmente en los (INSERT).
 
 ## ¿Cuál es la diferencia entre borrado lógico y borrado físico?
 
-**Borrado lógico:** Actualiza el `estado` a `0` mediante un `UPDATE`; los datos se conservan en la tabla de forma histórica.
-**Borrado físico:** Elimina los datos de manera definitiva e irreversible usando la sentencia `DELETE`.
+**Borrado lógico:** Actualiza el estado a (0) mediante un (UPDATE), los datos se conservan en la tabla de forma histórica.
+**Borrado físico:** Elimina los datos de manera definitiva e irreversible usando la sentencia (DELETE).
 
 ## ¿Para qué sirven los campos de auditoría?
 
 ### creado_el
 Registra automáticamente la fecha y hora de inserción del registro.
 ### modificado_el
-Almacena la fecha y hora de la última actualización (`UPDATE`).
+Almacena la fecha y hora de la última actualización (UPDATE).
 ### borrado_el
 Guarda la fecha y hora exacta en que se aplicó el borrado lógico.
 ### estado
-Indica la disponibilidad del registro (`1` = activo, `0` = inactivo).
+Indica la disponibilidad del registro ((1) = activo, (0) = inactivo).
 
 ## Dificultades encontradas
 Mantener el orden correcto en la ejecución de los bloques SQL (crear, alterar e insertar) y respetar la estructura de carpetas y commits en Git.
