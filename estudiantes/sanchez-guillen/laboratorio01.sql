@@ -94,3 +94,81 @@ VALUES
 SELECT * FROM ESTUDIANTE;
 SELECT * FROM DOCENTE;
 SELECT * FROM CURSO;
+--UPDATES---
+UPDATE ESTUDIANTE
+SET correo = 'nuevo@gmail.com',
+    modificado_el = SYSDATETIME()
+WHERE id_estudiante = 1;
+
+SELECT *
+FROM ESTUDIANTE
+WHERE id_estudiante = 1;
+
+UPDATE DOCENTE
+SET especialidad = 'Inteligencia Artificial',
+    modificado_el = SYSDATETIME()
+WHERE id_docente = 1; 
+
+SELECT *
+FROM DOCENTE
+WHERE id_docente = 1;
+
+UPDATE CURSO
+SET horas_semanales = 8,
+    modificado_el = SYSDATETIME()
+WHERE id_curso = 1;
+
+SELECT *
+FROM CURSO
+WHERE id_curso = 1;
+
+UPDATE ESTUDIANTE
+SET estado = 0,
+    borrado_el = SYSDATETIME(),
+    modificado_el = SYSDATETIME()
+WHERE id_estudiante = 2;
+
+SELECT *
+FROM ESTUDIANTE
+WHERE id_estudiante = 2;
+
+UPDATE DOCENTE
+SET estado = 0,
+    borrado_el = SYSDATETIME(),
+    modificado_el = SYSDATETIME()
+WHERE id_docente = 2;
+
+SELECT *
+FROM DOCENTE
+WHERE id_docente = 2;
+
+SELECT *
+FROM ESTUDIANTE
+WHERE estado = 1;
+
+SELECT *
+FROM DOCENTE
+WHERE estado = 1;
+
+SELECT *
+FROM CURSO
+WHERE estado = 1;
+
+
+
+---ELIMINAR---
+
+SELECT *
+FROM ESTUDIANTE
+WHERE id_estudiante = 8;
+
+SELECT *
+FROM ESTUDIANTE
+WHERE id_estudiante = 8;
+
+DELETE FROM ESTUDIANTE
+WHERE id_estudiante = 8;
+
+
+
+
