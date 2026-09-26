@@ -104,3 +104,14 @@ WHERE id_docente = 2;
 SELECT * FROM ESTUDIANTE WHERE estado = 1;
 SELECT * FROM DOCENTE WHERE estado = 1;
 GO
+
+
+-- Borrado físico
+DELETE FROM ESTUDIANTE WHERE id_estudiante = 8;
+GO
+
+-- Verificación final
+SELECT * FROM ESTUDIANTE;
+SELECT * FROM DOCENTE;
+SELECT * FROM CURSO;
+GO
