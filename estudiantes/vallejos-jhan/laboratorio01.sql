@@ -74,3 +74,33 @@ SELECT * FROM ESTUDIANTE;
 SELECT * FROM DOCENTE;
 SELECT * FROM CURSO;
 GO
+
+UPDATE ESTUDIANTE 
+SET correo = 'analucia.perez@correo.com', 
+    modificado_el = SYSDATETIME() 
+WHERE id_estudiante = 1;
+
+UPDATE DOCENTE 
+SET especialidad = 'Seguridad Ofensiva y Ciberseguridad', 
+    modificado_el = SYSDATETIME() 
+WHERE id_docente = 1;
+
+UPDATE CURSO 
+SET horas_semanales = 6, 
+    modificado_el = SYSDATETIME() 
+WHERE id_curso = 1;
+GO
+
+-- Borrado lógico
+UPDATE ESTUDIANTE 
+SET estado = 0, borrado_el = SYSDATETIME(), modificado_el = SYSDATETIME() 
+WHERE id_estudiante = 2;
+
+UPDATE DOCENTE 
+SET estado = 0, borrado_el = SYSDATETIME(), modificado_el = SYSDATETIME() 
+WHERE id_docente = 2;
+
+-- Consultar solo activos
+SELECT * FROM ESTUDIANTE WHERE estado = 1;
+SELECT * FROM DOCENTE WHERE estado = 1;
+GO
