@@ -1,9 +1,10 @@
 CREATE DATABASE BD_ACADEMICO_MUNDACA;
+
 GO
 
 USE BD_ACADEMICO_MUNDACA;
-GO
 
+GO
 
 CREATE TABLE ESTUDIANTE (
     id_estudiante INT IDENTITY(1,1) PRIMARY KEY,
@@ -12,6 +13,7 @@ CREATE TABLE ESTUDIANTE (
     apellidos VARCHAR(100) NOT NULL,
     fecha_nacimiento DATE
 );
+
 GO
 
 ALTER TABLE ESTUDIANTE
@@ -21,8 +23,8 @@ ADD
     modificado_el DATETIME2 NULL,
     borrado_el DATETIME2 NULL,
     estado BIT DEFAULT 1;
-GO
 
+GO
 
 CREATE TABLE DOCENTE (
     id_docente INT IDENTITY(1,1) PRIMARY KEY,
@@ -31,6 +33,7 @@ CREATE TABLE DOCENTE (
     apellidos VARCHAR(100) NOT NULL,
     profesion VARCHAR(100)
 );
+
 GO
 
 ALTER TABLE DOCENTE
@@ -40,8 +43,8 @@ ADD
     modificado_el DATETIME2 NULL,
     borrado_el DATETIME2 NULL,
     estado BIT DEFAULT 1;
-GO
 
+GO
 
 CREATE TABLE CURSO (
     id_curso INT IDENTITY(1,1) PRIMARY KEY,
@@ -49,6 +52,7 @@ CREATE TABLE CURSO (
     ciclo INT NOT NULL,
     horas_semanales INT NOT NULL
 );
+
 GO
 
 ALTER TABLE CURSO
@@ -58,4 +62,5 @@ ADD
     modificado_el DATETIME2 NULL,
     borrado_el DATETIME2 NULL,
     estado BIT DEFAULT 1;
+
 GO
