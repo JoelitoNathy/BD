@@ -101,3 +101,40 @@ VALUES
 ('Sistemas Operativos', 5, 4, 3);
 
 GO
+
+UPDATE ESTUDIANTE
+SET correo = 'nuevo.correo@correo.com',
+    modificado_el = SYSDATETIME()
+WHERE id_estudiante = 1;
+
+GO
+
+UPDATE DOCENTE
+SET especialidad = 'Desarrollo de Software',
+    modificado_el = SYSDATETIME()
+WHERE id_docente = 1;
+
+GO
+
+UPDATE CURSO
+SET horas_semanales = 6,
+    modificado_el = SYSDATETIME()
+WHERE id_curso = 1;
+
+GO
+
+UPDATE ESTUDIANTE
+SET estado = 0,
+    borrado_el = SYSDATETIME(),
+    modificado_el = SYSDATETIME()
+WHERE id_estudiante = 2;
+
+GO
+
+UPDATE DOCENTE
+SET estado = 0,
+    borrado_el = SYSDATETIME(),
+    modificado_el = SYSDATETIME()
+WHERE id_docente = 2;
+
+GO
