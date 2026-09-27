@@ -77,3 +77,51 @@ ADD creditos INT NULL,
     borrado_el DATETIME2 NULL,
     estado BIT DEFAULT 1;
 GO
+
+/* =========================================
+   9. INSERCIÓN DE ESTUDIANTES
+   ========================================= */
+INSERT INTO ESTUDIANTE (dni, nombres, apellidos, fecha_nacimiento, correo)
+VALUES 
+('74251638', 'Ana Lucía', 'Pérez Rojas', '2005-02-14', 'ana.perez@correo.com'),
+('75124893', 'Carlos Alberto', 'Gómez Silva', '2004-05-20', 'carlos.gomez@correo.com'),
+('73912045', 'María Elena', 'Torres Vega', '2005-11-03', 'maria.torres@correo.com'),
+('72840192', 'Juan José', 'Mendoza Ramos', '2003-08-15', 'juan.mendoza@correo.com'),
+('76109384', 'Valeria Sofia', 'Castro Díaz', '2004-12-01', 'valeria.castro@correo.com'),
+('70482910', 'Luis Fernando', 'Vargas Cruz', '2005-04-10', 'luis.vargas@correo.com'),
+('71839201', 'Diana Carolina', 'Ríos Morales', '2004-09-25', 'diana.rios@correo.com'),
+('74019283', 'Kevin Antony', 'Flores Paredes', '2003-01-18', 'kevin.flores@correo.com');
+GO
+
+/* =========================================
+   10. INSERCIÓN DE DOCENTES
+   ========================================= */
+INSERT INTO DOCENTE (dni, nombres, apellidos, profesion, especialidad)
+VALUES 
+('40123451', 'Roberto Manuel', 'Sánchez Peña', 'Ingeniero de Sistemas', 'Bases de Datos'),
+('40123452', 'Patricia Beatriz', 'Guerrero León', 'Licenciada en Educación', 'Didáctica Digital'),
+('40123453', 'Jorge Eduardo', 'Navarro Ruiz', 'Ingeniero de Software', 'Arquitectura Cloud'),
+('40123454', 'Carmen Rosa', 'Córdova Soto', 'Matemática', 'Estadística Aplicada'),
+('40123455', 'Hugo Javier', 'Espinoza Luna', 'Ingeniero Industrial', 'Gestión de Procesos');
+GO
+
+/* =========================================
+   11. INSERCIÓN DE CURSOS
+   ========================================= */
+INSERT INTO CURSO (nombre_curso, ciclo, horas_semanales, creditos)
+VALUES 
+('Base de Datos I', 3, 4, 4),
+('Programación I', 1, 6, 5),
+('Ingeniería de Requerimientos', 4, 4, 3),
+('Algoritmos y Estructura de Datos', 2, 6, 4),
+('Sistemas Operativos', 5, 4, 4),
+('Gestión de Proyectos TI', 6, 3, 3);
+GO
+
+/* =========================================
+   12. CONSULTAS SELECT INICIALES
+   ========================================= */
+SELECT * FROM ESTUDIANTE;
+SELECT * FROM DOCENTE;
+SELECT * FROM CURSO;
+GO
