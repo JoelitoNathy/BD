@@ -125,3 +125,82 @@ SELECT * FROM ESTUDIANTE;
 SELECT * FROM DOCENTE;
 SELECT * FROM CURSO;
 GO
+/* =========================================
+   13. ACTUALIZACIÓN DE ESTUDIANTE
+   ========================================= */
+UPDATE ESTUDIANTE
+SET correo = 'ana.perez.nuevo@correo.com',
+    modificado_el = SYSDATETIME()
+WHERE id_estudiante = 1;
+GO
+
+/* =========================================
+   14. ACTUALIZACIÓN DE DOCENTE
+   ========================================= */
+UPDATE DOCENTE
+SET especialidad = 'Inteligencia de Negocios y Big Data',
+    modificado_el = SYSDATETIME()
+WHERE id_docente = 1;
+GO
+
+/* =========================================
+   15. ACTUALIZACIÓN DE CURSO
+   ========================================= */
+UPDATE CURSO
+SET horas_semanales = 6,
+    modificado_el = SYSDATETIME()
+WHERE id_curso = 1;
+GO
+
+/* =========================================
+   16. CONSULTAS SELECT DESPUÉS DE MODIFICACIONES
+   ========================================= */
+SELECT * FROM ESTUDIANTE WHERE id_estudiante = 1;
+SELECT * FROM DOCENTE WHERE id_docente = 1;
+SELECT * FROM CURSO WHERE id_curso = 1;
+GO
+
+/* =========================================
+   17. BORRADO LÓGICO DE REGISTROS
+   ========================================= */
+UPDATE ESTUDIANTE
+SET estado = 0,
+    borrado_el = SYSDATETIME(),
+    modificado_el = SYSDATETIME()
+WHERE id_estudiante = 2;
+
+UPDATE DOCENTE
+SET estado = 0,
+    borrado_el = SYSDATETIME(),
+    modificado_el = SYSDATETIME()
+WHERE id_docente = 2;
+GO
+
+/* =========================================
+   18. SELECT DE VERIFICACIÓN DEL BORRADO LÓGICO
+   ========================================= */
+SELECT * FROM ESTUDIANTE WHERE estado = 1;
+SELECT * FROM DOCENTE WHERE estado = 1;
+SELECT * FROM CURSO WHERE estado = 1;
+
+SELECT * FROM ESTUDIANTE WHERE id_estudiante = 2;
+GO
+
+/* =========================================
+   19. BORRADO FÍSICO CON DELETE
+   ========================================= */
+SELECT * FROM ESTUDIANTE WHERE id_estudiante = 8;
+
+DELETE FROM ESTUDIANTE
+WHERE id_estudiante = 8;
+GO
+
+/* =========================================
+   20. CONSULTAS SELECT FINALES
+   ========================================= */
+SELECT * FROM ESTUDIANTE WHERE id_estudiante = 8;
+
+SELECT * FROM ESTUDIANTE;
+SELECT * FROM DOCENTE;
+SELECT * FROM CURSO;
+GO
