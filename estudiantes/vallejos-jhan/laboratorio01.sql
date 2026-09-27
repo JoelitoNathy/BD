@@ -1,8 +1,10 @@
+-- Creación de la base de datos
 CREATE DATABASE BD_ACADEMICO_VALLEJOS;
 GO
 USE BD_ACADEMICO_VALLEJOS;
 GO
 
+-- Creación de las tablas principales
 CREATE TABLE ESTUDIANTE (
     id_estudiante INT IDENTITY(1,1) PRIMARY KEY,
     dni VARCHAR(8) NOT NULL,
@@ -29,6 +31,7 @@ CREATE TABLE CURSO (
 );
 GO
 
+-- Agregar columnas de auditoría a las tablas
 ALTER TABLE ESTUDIANTE ADD 
     correo VARCHAR(120),
     creado_el DATETIME2 DEFAULT SYSDATETIME(),
@@ -51,6 +54,7 @@ ALTER TABLE CURSO ADD
     estado BIT DEFAULT 1;
 GO
 
+-- Inserción de registros iniciales
 INSERT INTO ESTUDIANTE (dni, nombres, apellidos, fecha_nacimiento, correo) VALUES
 ('74251638', 'Ana Lucía', 'Pérez Rojas', '2005-02-14', 'ana.perez@correo.com'),
 ('71234567', 'Carlos Alberto', 'Gómez Silva', '2004-05-20', 'carlos.gomez@correo.com'),
@@ -77,41 +81,31 @@ INSERT INTO CURSO (nombre_curso, ciclo, horas_semanales, creditos) VALUES
 ('Redes de Computadoras', 4, 5, 4);
 GO
 
+-- Consultar todos los registros
 SELECT * FROM ESTUDIANTE;
 SELECT * FROM DOCENTE;
 SELECT * FROM CURSO;
 GO
 
-UPDATE ESTUDIANTE 
-SET correo = 'analucia.perez@correo.com', 
-    modificado_el = SYSDATETIME() 
-WHERE id_estudiante = 1;
+-- Actualización de registros
+UPDATE ESTUDIANTE SET correo = 'analucia.perez@correo.com', 
+    modificado_el = SYSDATETIME() WHERE id_estudiante = 1;
 
-UPDATE DOCENTE 
-SET especialidad = 'Seguridad Ofensiva y Ciberseguridad', 
-    modificado_el = SYSDATETIME() 
-WHERE id_docente = 1;
+UPDATE DOCENTE SET especialidad = 'Seguridad Ofensiva y Ciberseguridad', 
+    modificado_el = SYSDATETIME() WHERE id_docente = 1;
 
-UPDATE CURSO 
-SET horas_semanales = 6, 
-    modificado_el = SYSDATETIME() 
-WHERE id_curso = 1;
+UPDATE CURSO SET horas_semanales = 6, 
+    modificado_el = SYSDATETIME() WHERE id_curso = 1;
 GO
 
 -- Borrado lógico
-UPDATE ESTUDIANTE 
-SET estado = 0, borrado_el = SYSDATETIME(), modificado_el = SYSDATETIME() 
-WHERE id_estudiante = 2;
-
-UPDATE DOCENTE 
-SET estado = 0, borrado_el = SYSDATETIME(), modificado_el = SYSDATETIME() 
-WHERE id_docente = 2;
+UPDATE ESTUDIANTE SET estado = 0, borrado_el = SYSDATETIME(), modificado_el = SYSDATETIME() WHERE id_estudiante = 2;
+UPDATE DOCENTE SET estado = 0, borrado_el = SYSDATETIME(), modificado_el = SYSDATETIME() WHERE id_docente = 2;
 
 -- Consultar solo activos
 SELECT * FROM ESTUDIANTE WHERE estado = 1;
 SELECT * FROM DOCENTE WHERE estado = 1;
 GO
-
 
 -- Borrado físico
 DELETE FROM ESTUDIANTE WHERE id_estudiante = 8;
