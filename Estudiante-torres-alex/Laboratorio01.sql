@@ -184,6 +184,7 @@ SELECT * FROM DOCENTE WHERE estado = 1;
 SELECT * FROM CURSO WHERE estado = 1;
 
 SELECT * FROM ESTUDIANTE WHERE id_estudiante = 2;
+SELECT * FROM DOCENTE WHERE id_docente = 2;
 GO
 
 /* =========================================
