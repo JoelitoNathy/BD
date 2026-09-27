@@ -28,7 +28,7 @@ CREATE TABLE CURSO (
     horas_semanales INT
 );
 
--- Agregado posteriormente mediante AlTER TABLE
+-- Agregar posteriormente mediante AlTER TABLE
 ALTER TABLE ESTUDIANTE
 ADD correo VARCHAR(120),
     creado_el DATETIME2 DEFAULT SYSDATETIME(),
