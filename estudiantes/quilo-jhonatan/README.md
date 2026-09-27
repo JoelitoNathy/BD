@@ -30,7 +30,7 @@ alumno/quilo-jhonatan
 - [x] Ejecutar DELETE
 - [x] Realizar SELECT de verificación
 - [x] Subir evidencias
-- [] Subir presentación final
+- [ ] Subir presentación final
 
 ## ¿Qué hace IDENTITY(1,1)?
 
