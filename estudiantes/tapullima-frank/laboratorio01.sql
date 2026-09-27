@@ -156,3 +156,135 @@ SELECT * FROM ESTUDIANTE;
 SELECT * FROM DOCENTE;
 SELECT * FROM CURSO;
 GO
+/* =========================================
+   13. ACTUALIZACIÓN DE ESTUDIANTE
+   ========================================= */
+
+UPDATE ESTUDIANTE
+SET correo = 'carlos.ramirez@unsm.edu.pe',
+    modificado_el = SYSDATETIME()
+WHERE id_estudiante = 1;
+GO
+
+
+/* =========================================
+   14. ACTUALIZACIÓN DE DOCENTE
+   ========================================= */
+
+UPDATE DOCENTE
+SET especialidad = 'Administracion de Base de Datos',
+    modificado_el = SYSDATETIME()
+WHERE id_docente = 1;
+GO
+
+
+/* =========================================
+   15. ACTUALIZACIÓN DE CURSO
+   ========================================= */
+
+UPDATE CURSO
+SET horas_semanales = 6,
+    modificado_el = SYSDATETIME()
+WHERE id_curso = 1;
+GO
+
+
+/* =========================================
+   16. VERIFICACIÓN DE ACTUALIZACIONES
+   ========================================= */
+
+SELECT id_estudiante, nombres, apellidos, correo, modificado_el
+FROM ESTUDIANTE
+WHERE id_estudiante = 1;
+
+SELECT id_docente, nombres, apellidos, especialidad, modificado_el
+FROM DOCENTE
+WHERE id_docente = 1;
+
+SELECT id_curso, nombre_curso, horas_semanales, modificado_el
+FROM CURSO
+WHERE id_curso = 1;
+GO
+/* =========================================
+   17. BORRADO LÓGICO
+   ========================================= */
+
+/* Borrado lógico de un estudiante */
+UPDATE ESTUDIANTE
+SET estado = 0,
+    borrado_el = SYSDATETIME(),
+    modificado_el = SYSDATETIME()
+WHERE id_estudiante = 7;
+GO
+
+/* Borrado lógico de un docente */
+UPDATE DOCENTE
+SET estado = 0,
+    borrado_el = SYSDATETIME(),
+    modificado_el = SYSDATETIME()
+WHERE id_docente = 5;
+GO
+
+
+/* =========================================
+   18. VERIFICACIÓN DEL BORRADO LÓGICO
+   ========================================= */
+
+/* Registro del estudiante eliminado lógicamente */
+SELECT id_estudiante, nombres, apellidos,
+       estado, borrado_el, modificado_el
+FROM ESTUDIANTE
+WHERE id_estudiante = 7;
+
+/* Registro del docente eliminado lógicamente */
+SELECT id_docente, nombres, apellidos,
+       estado, borrado_el, modificado_el
+FROM DOCENTE
+WHERE id_docente = 5;
+
+/* Registros que continúan activos */
+SELECT * FROM ESTUDIANTE
+WHERE estado = 1;
+
+SELECT * FROM DOCENTE
+WHERE estado = 1;
+GO
+/* =========================================
+   19. BORRADO FÍSICO DE UN ESTUDIANTE
+   ========================================= */
+
+/* Se elimina físicamente un estudiante
+   diferente al eliminado lógicamente */
+
+DELETE FROM ESTUDIANTE
+WHERE id_estudiante = 8;
+GO
+
+
+/* =========================================
+   20. VERIFICACIÓN FINAL
+   ========================================= */
+
+/* Verificar que el estudiante con ID 8
+   ya no existe físicamente */
+SELECT *
+FROM ESTUDIANTE
+WHERE id_estudiante = 8;
+
+/* Mostrar todos los estudiantes restantes */
+SELECT *
+FROM ESTUDIANTE;
+
+/* Mostrar estudiantes activos */
+SELECT *
+FROM ESTUDIANTE
+WHERE estado = 1;
+
+/* Estado final de docentes */
+SELECT *
+FROM DOCENTE;
+
+/* Estado final de cursos */
+SELECT *
+FROM CURSO;
+GO
