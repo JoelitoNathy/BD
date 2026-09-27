@@ -90,3 +90,77 @@ SELECT * FROM ESTUDIANTE;
 SELECT * FROM DOCENTE;
 SELECT * FROM CURSO;
 GO
+
+-- Modificación de un registro con UPDATE
+UPDATE ESTUDIANTE
+SET correo = 'nuevocorreo@gmail.com',
+    modificado_el = SYSDATETIME()
+WHERE id_estudiante = 1;
+
+UPDATE DOCENTE
+SET especialidad = 'Gestión de Base de Datos',
+    modificado_el = SYSDATETIME()
+WHERE id_docente = 1;
+
+UPDATE CURSO
+SET horas_semanales = 6,
+    modificado_el = SYSDATETIME()
+WHERE id_curso = 1;
+
+-- Verificación
+
+SELECT * FROM ESTUDIANTE WHERE id_estudiante = 1;
+SELECT * FROM DOCENTE WHERE id_docente = 1;
+SELECT * FROM CURSO WHERE id_curso = 1;
+
+-- BORRADO LÓGICO
+
+UPDATE ESTUDIANTE
+SET estado = 0,
+    borrado_el = SYSDATETIME(),
+    modificado_el = SYSDATETIME()
+WHERE id_estudiante = 2;
+
+UPDATE DOCENTE
+SET estado = 0,
+    borrado_el = SYSDATETIME(),
+    modificado_el = SYSDATETIME()
+WHERE id_docente = 2;
+
+
+-- Verificación
+
+SELECT * FROM ESTUDIANTE
+WHERE id_estudiante = 2;
+
+SELECT * FROM DOCENTE
+WHERE id_docente = 2;
+
+--REGISTROS ACTIVOS
+
+SELECT *
+FROM ESTUDIANTE
+WHERE estado = 1;
+
+SELECT *
+FROM DOCENTE
+WHERE estado = 1;
+
+SELECT *
+FROM CURSO
+WHERE estado = 1;
+
+--BORRADO FÍSICO
+
+SELECT *
+FROM ESTUDIANTE
+WHERE id_estudiante = 8;
+
+DELETE FROM ESTUDIANTE
+WHERE id_estudiante = 8;
+
+
+-- Verificación
+SELECT *
+FROM ESTUDIANTE
+WHERE id_estudiante = 8;
