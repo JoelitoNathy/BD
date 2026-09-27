@@ -20,15 +20,15 @@ alumno/sanchez-guillen
 - [x] Crear tabla CURSO
 - [x] Implementar IDENTITY(1,1)
 - [x] Agregar campos con ALTER TABLE
-- [ ] Agregar creado_el
-- [ ] Agregar modificado_el
-- [ ] Agregar borrado_el
-- [ ] Agregar estado
-- [ ] Ejecutar INSERT
-- [ ] Ejecutar UPDATE
-- [ ] Ejecutar borrado lógico
-- [ ] Ejecutar DELETE
-- [ ] Realizar SELECT de verificación
+- [x] Agregar creado_el
+- [x] Agregar modificado_el
+- [x] Agregar borrado_el
+- [x] Agregar estado
+- [x] Ejecutar INSERT
+- [X] Ejecutar UPDATE
+- [X] Ejecutar borrado lógico
+- [X] Ejecutar DELETE
+- [X] Realizar SELECT de verificación
 - [ ] Subir evidencias
 - [ ] Subir presentación final
 
