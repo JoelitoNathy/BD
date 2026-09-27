@@ -60,14 +60,14 @@ GO
 INSERT INTO ESTUDIANTE
 (dni, nombres, apellidos, fecha_nacimiento, correo)
 VALUES
-('74251638', 'Ana Lucía', 'Pérez Rojas', '2005-02-14', 'ana.perez@correo.com'),
-('73124568', 'Carlos Alberto', 'Ramírez Díaz', '2004-07-20', 'carlos.ramirez@correo.com'),
-('75896321', 'María Fernanda', 'García López', '2005-11-08', 'maria.garcia@correo.com'),
-('74632158', 'José Luis', 'Torres Sánchez', '2004-05-16', 'jose.torres@correo.com'),
-('76985412', 'Daniela Sofía', 'Ruiz Mendoza', '2005-09-25', 'daniela.ruiz@correo.com'),
-('72365894', 'Miguel Ángel', 'Flores Vargas', '2004-12-10', 'miguel.flores@correo.com'),
-('75412689', 'Camila Andrea', 'Ríos Castillo', '2005-03-18', 'camila.rios@correo.com'),
-('78541236', 'Luis Fernando', 'Morales Pérez', '2004-08-30', 'luis.morales@correo.com');
+('74251638', 'Ana Lucía', 'Pérez Rojas', '2005-02-14', 'ana.perez@gmail.com'),
+('73124568', 'Carlos Alberto', 'Ramírez Díaz', '2004-07-20', 'carlos.ramirez@gmail.com'),
+('75896321', 'María Fernanda', 'García López', '2005-11-08', 'maria.garcia@gmail.com'),
+('74632158', 'José Luis', 'Torres Sánchez', '2004-05-16', 'jose.torres@gmail.com'),
+('76985412', 'Daniela Sofía', 'Ruiz Mendoza', '2005-09-25', 'daniela.ruiz@gmail.com'),
+('72365894', 'Miguel Ángel', 'Flores Vargas', '2004-12-10', 'miguel.flores@gmail.com'),
+('75412689', 'Camila Andrea', 'Ríos Castillo', '2005-03-18', 'camila.rios@gmail.com'),
+('78541236', 'Luis Fernando', 'Morales Pérez', '2004-08-30', 'luis.morales@gmail.com');
 GO
 
 INSERT INTO DOCENTE
@@ -97,7 +97,7 @@ SELECT * FROM CURSO;
 GO
 
 UPDATE ESTUDIANTE
-SET correo = 'nuevo.correo@correo.com',
+SET correo = 'ciberandy@gmail.com',
     modificado_el = SYSDATETIME()
 WHERE id_estudiante = 1;
 GO
